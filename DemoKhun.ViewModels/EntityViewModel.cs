@@ -35,6 +35,9 @@ namespace DemoKhun.ViewModels
             Messenger<PromptConfirmMessage>.Instance.Send(promptConfirmMessage);
             if(promptConfirmMessage.Result)
             {
+                //Appel du service pour suppression 
+
+                //Ensuite
                 Messenger<EntityViewModel>.Instance.Send("Delete", this);
             }
         }

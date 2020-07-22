@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoKhun"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" DataContext="{StaticResource Main}">
+        Title="MainWindow" Height="450" Width="800" DataContext="{StaticResource Main}" ResizeMode="CanMinimize">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserResizeColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Text" Binding="{Binding Text}" Width="*" />
@@ -19,5 +23,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Grid.Row="1" Content="Create New" Command="{Binding CreateCommand}" />
     </Grid>
 </Window>
